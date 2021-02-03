@@ -1,13 +1,23 @@
+.p15 p {
+    display: flex;
+    align-items: center;
+}
 .whatsapp {
-    width: 100%;
-    height: 100%;
     margin-left: 10px;
 }
-.whatsapp img {
-    width: 25px;
-    height: 25px;
+.whatsapp i {
+    width: 35px;
+    color: white;
+    padding: 5px;
+    font-size: 16px;
     transition: filter 0.2s;
+    background-color: #25d366;
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.whatsapp img:hover {
+.whatsapp i:hover {
     filter: brightness(70%);
 }

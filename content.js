@@ -1,33 +1,28 @@
-function getCelular() {
+function getData() {
     const contato = document.querySelectorAll(".p15 p");
     const cel = contato[3].innerText.slice(9,20);
+    const nome = contato[0].innerText;
     return { 
         contato,
-        cel
-    }
-}
+        cel,
+        nome
+    };
+};
 
-function createA(cel){
+function createA(cel, nome){
     const aHref = document.createElement("a");
-    aHref.href = `https://wa.me/55${cel}`;
+    aHref.href = `https://wa.me/55${cel}/?text=Olá *${nome}*, tudo bem?`;
     aHref.classList.add("whatsapp");
-    aHref.target = "_blank"
-    return aHref
-}
-
-function createImg() {
-    const img = document.createElement("img");
-    img.src = "https://image.flaticon.com/icons/png/128/3938/3938041.png";
-    return img
-}
+    aHref.target = "_blank";
+    aHref.innerHTML = '<i class="fab fa-whatsapp"></i>';
+    return aHref;
+};
 
 function startApp() {
-    const data = getCelular();
-    const a = createA(data.cel)
-    const img = createImg()
+    const data = getData();
+    const a = createA(data.cel, data.nome);
     
-    a.appendChild(img)
-    data.contato[3].appendChild(a)
-}
+    data.contato[3].appendChild(a);
+};
 
-document.addEventListener("load", startApp())
+document.addEventListener("load", startApp());
