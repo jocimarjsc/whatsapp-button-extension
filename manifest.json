@@ -8,7 +8,12 @@
     },
     "content_scripts": [
         {
-            "matches": [ "https://www.plataformarocky.com.br/pedidos/view/*"],
+            "matches": [ 
+                "https://www.plataformarocky.com.br/pedidos/view/*",
+                "https://plataformarocky.com.br/pedidos/view/*",
+                "https://www.plataformarocky.com.br/pedidos/dashboard/*",
+                "https://plataformarocky.com.br/pedidos/dashboard/*"
+            ],
             "css": [
                 "style.css"
             ],
